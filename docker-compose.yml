@@ -10,6 +10,8 @@ services:
       - prometheus-data:/etc/prometheus
 
   grafana:
+    links:
+      - prometheus
     image: grafana/grafana
     volumes:
       - grafana-data:/var/lib/grafana
